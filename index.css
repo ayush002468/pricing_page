@@ -1,0 +1,355 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+:root {	
+	--font: Inter;
+	--style: normal;
+
+	--web-h1: 3.5rem;
+	--web-h2: 2.25rem;
+	--web-h3: 1.5rem;
+	--web-h4: 1.25rem;
+	--web-h5: 1rem;
+	--web-heading:2rem;
+
+	--web-msg: 1.5625rem;
+	--web-msg-line-height: 2rem;
+
+	--web-h1-line-height: 4rem;
+	--web-h2-line-height: 3rem;
+	--web-h3-line-height: 2.5rem;
+	--web-h4-line-height: 1.5rem;
+	--web-h5-line-height: 3rem;
+	--web-line-height: 2.25rem;
+
+	--web-fs-paragraph: 1.25rem;
+	--web-line-height: 1.5rem;
+	--web-fs-smallText: 0.75rem;
+	--web-fs-button: 0.875rem;
+	
+
+	--fw-bold: bold;
+	--fw-normal: 500;
+	--fw-light: 400;
+
+	--mobile-h1: 1.375rem;
+	--mobile-h2: 1.25rem;
+	--mobile-h3: 1rem;
+	--mobile-h4: 0.7rem;
+	--mobile-h5: 0.8rem;
+	--mobile-fs-paragraph: 0.875rem;
+	--mobile-line-height: 1.25rem;
+	--mobile-fs-smallText: 0.625rem;
+	--mobile-fs-button: 0.813rem;
+}
+html {
+    /* Setting root font size for 'rem' */
+    font-size: 0.834vw;
+    --base-fontsize-mobile: 3.75vw;
+}
+body{
+    text-align: center;
+    margin: 0;
+}
+
+.weight-bold {
+    font-weight: 700 !important;
+}
+.weight-medium {
+    font-weight: 500 !important;
+}
+.weight-regular {
+    font-weight: 400 !important;
+}
+
+/* In our typography definition, there's no H5 and H6 */
+h1,
+.h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 3rem; /* 48px */
+    line-height: 3.25rem; /* 52px */
+}
+
+h2,
+.h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+}
+
+h3,
+.h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 1.75rem; /* 28px */
+    line-height: 2rem; /* 32px */
+}
+
+h4,
+.h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.5rem; /* 24px */
+}
+
+.font-body {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 1rem; /* 16px */
+    line-height: 1.375rem; /* 22px */
+}
+
+.font-small {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem; /* 16px */
+}
+
+.font-button {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 0.875rem; /* 14px */
+    line-height: 0.875rem; /* 14px */
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+    h1,
+    .h1 {
+        font-size: 1.75rem; /* 28px */
+        line-height: 2rem; /* 32px */
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.5rem; /* 24px */
+        line-height: 1.75rem; /* 28px */
+    }
+
+    h3,
+    .h3 {
+        font-size: 1.25rem; /* 20px */
+        line-height: 1.5rem; /* 24px */
+    }
+
+    h4,
+    .h4 {
+        font-size: 1rem; /* 16px */
+        line-height: 1.25rem; /* 20px */
+    }
+
+    .font-body {
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.25rem; /* 20px */
+    }
+
+    .font-small {
+        font-size: 0.625rem; /* 10px */
+        line-height: 0.75rem; /* 12px */
+    }
+
+    .font-button {
+        font-size: 0.813rem; /* 13px */
+        line-height: 0.813rem; /* 13px */
+        font-weight: 700;
+    }
+}
+:root{
+    /* primary  */
+    --primary:#6E40FF ;
+    --primary-medium:#7548A8;
+    --primary-light:#E8E0FF;
+    --primary-lighter: #D8C9FF;
+    /* secondary */
+    --secondary:#109C72;
+    --secondary-light:#D9EFE8;
+
+    /* grayscale */
+    --grayscale:#172B4D;
+    --grayscale-5:#a3a2a5;
+    --grayscale-4:#6B788D;
+    --grayscale-3:#A2AAB8;
+    --grayscale-2:#DADDE2;
+    --grayscale-1:#EDEEF1;
+    --gray-purple:#97929C;
+    
+    /* blacks */
+    --pure-black: #000000;
+    --black:#201F20;
+    --black-deep:#0E0D0E;
+    --black-dark:#241C3C;
+    --black-shadow:#172b4d29;
+    --black-shadow-1:#c7e9ff;
+    --black-shadow-2:rgb(23 43 77 / 15%);
+    
+    /* whites */
+    --white:#FFFFFF;
+    --off-white:#F8F9FA;
+    --off-white-1:#F9F8FE;
+    --off-white-2:#DADAE2;
+
+    /* alerts */
+    --alert-success-font:#006100;
+    --alert-success-bg:#C6EFCE;
+    --alert-danger-font:#9C0006;
+    --alert-danger-bg:#FFC7CE;
+    --alert-warning-font:#9C5700;
+    --alert-warning-bg:#FFEB9C;
+    --alert-info-font:#FFEB9C;
+    --alert-info-bg:#C6CAF0;
+
+    /* error */
+    --error: #E53935;
+
+    /* button */
+    --button: #9E6DD2;
+    --button-bg: #262a4b;
+}
+.pricing-content{
+    background-color: #F8F9FA;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+}
+.pricing-header__content h1{
+    padding-top: .5rem;
+    margin: 0;
+    padding-bottom: .5rem;
+    color: var(--black-deep);
+}
+.pricing-header__content h4{
+    padding-top: 1rem;
+    padding-bottom: 4.5rem;
+    margin: 0;
+}
+.pricing-switch{
+    display: flex;
+    justify-content: center;
+}
+.pricing-switch p{
+    color: var(--grayscale);
+}
+.switch{
+    height: auto;
+    width: 3rem;
+    padding: 0rem 1.5rem 0rem 0rem;
+    background: var(--primary);
+    border-radius: 1.7rem;
+    margin: 0.3rem 1.2rem 0.3rem;
+}
+.slider.round{
+    border-radius: 50%;
+    content: "";
+    height: 1.4rem;
+    width: 1.4rem;
+    left: 0.3rem;
+    bottom: 0.4rem;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.pricing-columns{
+    
+    display: flex;
+    flex-direction: row;
+    max-width: 90%;
+    padding: 0 9.3rem;
+    margin: 0 auto;
+}
+.pricing-column{
+    overflow: hidden;
+    background: #FFFFFF;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgb(0 0 0 / 20%);
+    margin: 0.5em;
+    flex: 0 1 33%;
+}
+.pricing-column__header-content h1{
+    margin: 0;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.pricing-column__header-content h4{
+padding-top: 1rem;
+margin: 0;
+}
+.pricing-column-info span{
+color: var(--grayscale-4);
+}
+.pricing-column__button button{
+    padding: 1rem;
+    width: 25rem;
+    background: var(--primary);
+    border-radius: 4px;
+    color: var(--white);
+}
+.pricing-column__features{
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+.pricing-column__features-list{
+    padding: 0rem 1.5rem;
+}
+.pricing-column__feature-content{
+    display: flex;
+}
+.pricing-column__feature-content p{
+    margin-left: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: var(--web-fs-paragraph);
+    font-weight: var(--fw-normal);
+    font-family: var(--font);
+}
+.pricing-column__features-para{
+    display: flex;
+}
+.pricing-column__features-para h4{
+    margin-bottom: 0;
+    color: var(--primary);
+}
+.pricing-column__line{
+    border: 1px solid #DADDE2;
+}
+.pricing-column__button{
+    padding-bottom: 2.5rem;
+    padding-top: 1.5rem;
+}
+.pricing-terms{
+    text-align: left;
+    padding: 0 9.7rem;
+    margin: 0 auto;
+}
+.pricing-terms h4{
+    color: var(--grayscale-4);
+    margin-top: 0.5rem;
+}
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: var(--base-fontsize-mobile);
+    }
+    .pricing-columns{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 0rem;
+        margin: 0 auto;
+    }
+    .pricing-column__feature-content p{
+        font-size: var(--mobile-h3);
+    }
+    .pricing-terms{
+        padding: 0 1rem;
+    }
+    .switch{
+        padding: 0rem 1.5rem 0rem 0rem;
+        margin: 0.5rem 1.2rem 0.3rem;
+    }
+}
