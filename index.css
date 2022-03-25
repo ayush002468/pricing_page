@@ -50,6 +50,10 @@ body{
     text-align: center;
     margin: 0;
 }
+* {
+    font-family: var(--font), sans-serif;
+    box-sizing: border-box;
+}
 
 .weight-bold {
     font-weight: 700 !important;
@@ -208,6 +212,8 @@ h4,
     --button: #9E6DD2;
     --button-bg: #262a4b;
 }
+/*pricing main section css starts here*/
+
 .pricing-content{
     background-color: #F8F9FA;
     padding-top: 8rem;
@@ -230,30 +236,50 @@ h4,
 }
 .pricing-switch p{
     color: var(--grayscale);
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
-.switch{
-    height: auto;
-    width: 3rem;
-    padding: 0rem 1.5rem 0rem 0rem;
-    background: var(--primary);
-    border-radius: 1.7rem;
-    margin: 0.3rem 1.2rem 0.3rem;
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
 }
-.slider.round{
-    border-radius: 50%;
-    content: "";
-    height: 1.4rem;
-    width: 1.4rem;
-    left: 0.3rem;
-    bottom: 0.4rem;
-    background-color: var(--white);
-    -webkit-transition: .4s;
-    transition: .4s;
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 3rem;
+	height: 1.75rem;
+	background: var(--primary);
+	display: block;
+	border-radius: 6.25rem;
+	position: relative;
 }
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 1rem;
+	height: 1rem;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--primary);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width:1.56rem;
 }
 .pricing-columns{
     
@@ -273,15 +299,22 @@ h4,
 }
 .pricing-column__header-content h1{
     margin: 0;
+    color: var(--grayscale);
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
 .pricing-column__header-content h4{
-padding-top: 1rem;
-margin: 0;
+    color: var(--grayscale);
+    padding-top: 1rem;
+    margin: 0;
+}
+.pricing-column-info{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 .pricing-column-info span{
-color: var(--grayscale-4);
+    color: var(--grayscale-4);
 }
 .pricing-column__button button{
     padding: 1rem;
@@ -301,6 +334,7 @@ color: var(--grayscale-4);
     display: flex;
 }
 .pricing-column__feature-content p{
+    color: var(--grayscale);
     margin-left: 0.8rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -316,7 +350,7 @@ color: var(--grayscale-4);
     color: var(--primary);
 }
 .pricing-column__line{
-    border: 1px solid #DADDE2;
+    border: 0.01rem solid #DADDE2;
 }
 .pricing-column__button{
     padding-bottom: 2.5rem;
@@ -324,17 +358,157 @@ color: var(--grayscale-4);
 }
 .pricing-terms{
     text-align: left;
-    padding: 0 9.7rem;
+    padding: 0 16rem;
     margin: 0 auto;
 }
 .pricing-terms h4{
     color: var(--grayscale-4);
     margin-top: 0.5rem;
 }
+
+/*customer-review section css*/
+
+.customersRev__wrapper{
+    margin: 0rem 14rem;
+    padding: 0rem 0px;
+}
+.customer-review{
+    padding: 8rem 0;
+}
+.customer-review header h2{
+    color: var(--primary);
+    margin: 0;
+}
+.customer-review__slide-wrapper{
+    margin: 0rem 5rem 0rem 5rem;
+}
+.customer-review__body{
+    display: flex;
+    align-items: center;
+}
+.customer-review__image-content{
+    position: relative;
+}
+.customer-review__image{
+    width: 25rem;
+    height: auto;
+    margin: 3rem 0 1.5rem 0;
+    position: relative;
+}
+.customer-review__slide{
+    display: flex;
+    align-items: center;
+    gap: 3.8rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+.customer-review__slide h3{
+    color: var(--grayscale);
+    margin-top: 0;
+}
+.customer-review__designation{
+    color: var(--grayscale);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.customer__span{
+    margin: 0;
+}
+.customer-review__arrow-right{
+    color: var(--grayscale);
+    box-shadow: 1px 0px 2px 1px rgb(23 43 77 / 16%);
+    border-radius: 7.5rem;
+    cursor: pointer;
+}
+.customer-review__arrow-left{
+    color: var(--grayscale);
+    box-shadow: 1px 0px 2px 1px rgb(23 43 77 / 16%);
+    border-radius: 7.5rem;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+.customer-review__arrow-right img{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+.customer-review__arrow-left img{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.customer-review__bg-pattern{
+    position: absolute;
+    left: 4.25rem;
+    top: -0.5rem;
+    z-index: -1;
+    opacity: 0.4;
+    width: 25rem;
+    height: auto;
+}
+/*customer review css end*/
+
+/* faq section css starts here */
+.faq-section{
+    padding-bottom: 8rem;
+}
+.faq-section header h2{
+    color:var(--grayscale);
+    margin: 0;
+    padding-bottom: 2rem;
+
+}
+
+.faq-container__wrapper{
+    padding: 4.5rem 17.5rem 4rem;
+}
+
+.faq-container__item-list{
+    display: flex;
+    gap: 1.5rem;
+    color: var(--grayscale);
+}
+.faq-container__item-list img{
+    width: 1.432rem;
+}
+.faq-container__active-para h4{
+    margin-top: 0;
+    padding-left: 3rem;
+    text-align: left;
+    color: var(--grayscale);
+}
+.load__more__button{
+    border-radius: 8px;
+    padding: 2.4rem 10.7rem;
+    background-color: var(--grayscale);
+    color: var(--white);
+}
+/* faq section css ends here */
+
+
 @media only screen and (max-width: 767px) {
     html {
         font-size: var(--base-fontsize-mobile);
     }
+    /* pricing main section mobile view css starts here */
+
+    .pricing-header__content h1{
+        margin: 0 3rem;
+    }
+    .pricing-content{
+        padding: 3rem 1rem 3.35rem 1rem;    
+    }
+    .pricing-header__content h4{
+        padding-bottom: 1.5rem;
+        margin: 0 3rem;
+        padding-top: 0;
+    }
+    .pricing-column__button button{
+      
+        width:94%;
+     }
     .pricing-columns{
         display: flex;
         flex-direction: column;
@@ -348,8 +522,89 @@ color: var(--grayscale-4);
     .pricing-terms{
         padding: 0 1rem;
     }
-    .switch{
-        padding: 0rem 1.5rem 0rem 0rem;
-        margin: 0.5rem 1.2rem 0.3rem;
+    /* pricing main section css for mobile view ends here */
+   
+   
+    /* customer-review section mobile view starts here */
+    
+   .customer-review__arrow-left{
+        display: none;
     }
+    .customer-review__arrow-right{
+        display: none;
+    }
+    .customersRev__wrapper{
+        margin:0;
+    }
+    .customer-review__indicator{
+        display: none;
+    }
+    .customer-review__slide-wrapper{
+        margin:0;
+    }
+    .customer-review__slide{
+        flex-direction: column;
+        padding-top: 1rem;
+        gap: 1rem;
+    }
+    .customer-review{
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .customer-review header h2{
+        text-align: left;
+        margin-left: 1rem;
+    }
+    .customer-review__slide h3{
+        margin: 0rem 3rem 0rem 1rem;
+        text-align: left;
+    }
+    .customer-review__image{
+        margin: 0;
+        border-radius: 16px;
+        width: 5rem;
+        align-items: flex-start;
+    }
+    .customer-review__designation{
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        align-items: self-start;
+    }
+    .customer-review__image-content{
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 1rem;
+        margin-left: 1rem;
+        align-self: flex-start;
+    }
+    .customer-review__bg-pattern{
+        display: none;
+    }
+
+    /* customer-review section mobile view ends here */
+
+    /* faq section mobile view starts here */
+    .faq-container__wrapper{
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+    .faq-section{
+        padding: 1rem;
+        padding-top: 2.5rem;
+    }
+    .faq-container__item-list{
+        gap: 0.5rem;
+    }
+    .faq-container__item-list h3{
+        text-align: left;
+    }
+    .faq-container__active-para h4{
+        padding-left: 2rem;
+    }
+    .load__more__button{
+        padding: 1.2rem 10rem;
+    }
+    /* faq section mobile view ends here */
 }
