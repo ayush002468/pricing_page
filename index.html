@@ -10,7 +10,8 @@
 
   <body>
     <main>
-      <section class="pricing-content">
+      <section class="pricing-main__section">
+        <div class="container__width">
         <div class="pricing-header__content">
           <h1>14-Day Free Trial. No Credit Card Required</h1>
           <h4 class="weight-regular">
@@ -18,21 +19,22 @@
           </h4>
         </div>
         <div class="pricing-switch">
-          <p class="font-body">Monthly</p>
-          <input type="checkbox" id="switch" /><label for="switch"
-            >Toggle</label
+          <p id="classmonth" class="font-body">Monthly</p>
+          <input type="checkbox" onclick="choosePlan()" id="switch" /><label
+            for="switch"
+            ></label
           >
-          <p class="font-body">Anually</p>
+          <p id="classyear" class="font-body">Anually</p>
         </div>
         <div class="pricing-columns">
           <div class="pricing-column">
             <div class="pricing-column__header">
               <div class="pricing-column__header-content">
                 <h4 class="weight-medium">Standard</h4>
-                <h1>$49</h1>
+                <h1 id="Starter-bill">$49</h1>
                 <div class="pricing-column-info">
-                  <span class="font-body">/month/user</span>
-                  <span class="font-body">Billed Monthly</span>
+                  <span id="Starter-perUser" class="font-body">/month/user</span>
+                  <span id="Starter-perMonth" class="font-body">Billed Monthly</span>
                 </div>
               </div>
             </div>
@@ -44,6 +46,9 @@
             <div class="pricing-column__line"></div>
             <div class="pricing-column__features">
               <div class="pricing-column__features-list">
+                <div class="pricing-column__features-para hidden">
+                  <p>none</p>
+                </div>
                 <div class="pricing-column__feature-content">
                   <img src="./image/Icon.svg" alt="" />
                   <p>1 user</p>
@@ -70,10 +75,6 @@
                 </div>
                 <div class="pricing-column__feature-content">
                   <img src="./image/Icon.svg" alt="" />
-                  <p>30+ Templates</p>
-                </div>
-                <div class="pricing-column__feature-content">
-                  <img src="./image/Icon.svg" alt="" />
                   <p>+$49 per User</p>
                 </div>
               </div>
@@ -83,10 +84,10 @@
             <div class="pricing-column__header">
               <div class="pricing-column__header-content">
                 <h4 class="weight-medium">Premium</h4>
-                <h1>$49</h1>
+                <h1 id="Pro-bill">$99</h1>
                 <div class="pricing-column-info">
-                  <span class="font-body">/month/user</span>
-                  <span class="font-body">Billed Monthly</span>
+                  <span id="Pro-perUser" class="font-body">/month/user</span>
+                  <span id="Pro-perMonth" class="font-body">Billed Monthly</span>
                 </div>
               </div>
             </div>
@@ -134,10 +135,10 @@
             <div class="pricing-column__header">
               <div class="pricing-column__header-content">
                 <h4 class="weight-medium">Enterprise</h4>
-                <h1>$49</h1>
+                <h1 id="Enterprise-bill">$79</h1>
                 <div class="pricing-column-info">
-                  <span class="font-body">/month/user</span>
-                  <span class="font-body">Billed Monthly</span>
+                  <span id="Enterprise-perUser" class="font-body">/month/user</span>
+                  <span id="Enterprise-perMonth" class="font-body">Billed Monthly</span>
                 </div>
               </div>
             </div>
@@ -177,53 +178,127 @@
         <div class="pricing-terms">
           <h4 class="weight-regular">* Exclusive of applicable local taxes</h4>
         </div>
+      </div>
       </section>
-      <section class="customer-review">
+      <section>
         <div class="customersRev__wrapper">
           <header>
             <h2>Check what our customers are saying!</h2>
           </header>
           <div class="customer-review__content">
             <div class="customer-review__body">
-              <div class="customer-review__arrow-left">
-                <img src="./image/arrow-right.png" alt="left arrow" />
+              <div class="customer-review__arrow-left" onclick="nextSlide(-1)">
+                <img id="left__arrow" src="./image/arrow-right.png" alt="left arrow" />
               </div>
               <div class="customer-review__slide-wrapper">
-                <div class="customer-review__slide">
-                  <h3 class="weight-regular">
-                    “This is incredible! My content creation cost has come down
-                    by 80%. Attryb Tech helped my team to generate content at
-                    10X speed without compromising on quality. Content creation
-                    has never been so seamless.”
-                  </h3>
-                  <div class="customer-review__image-content">
-                    <img
-                      class="customer-review__image"
-                      src="./image/customer_image.png"
-                      alt="customer image"
-                    />
-                    <img
-                      class="customer-review__bg-pattern"
-                      src="./image/customer_review_pattern.svg"
-                      alt="customer_rev_pattern"
-                    />
-                    <div class="customer-review__designation">
-                      <span><h4 class="weight-regular customer__span">Justin from</h4></span>
-                      <span class="weight-bold"><h4 class="customer__span">Best Views Reviews</h4></span>
+                <div class="customer-review__details" id="customer-review__slide">
+                  <div class="customer-review__slide viewSlide">
+                    <h3 class="weight-regular">
+                      “This is incredible! My content creation cost has come
+                      down by 80%. Attryb Tech helped my team to generate
+                      content at 10X speed without compromising on quality.
+                      Content creation has never been so seamless.”
+                    </h3>
+                    <div class="customer-review__image-content">
+                      <img
+                        class="customer-review__image"
+                        src="./image/customer_image.png"
+                        alt="customer image"
+                      />
+                      <img
+                        class="customer-review__bg-pattern"
+                        src="./image/customer_review_pattern.svg"
+                        alt="customer_rev_pattern"
+                      />
+                      <div class="customer-review__designation">
+                        <span
+                          ><h4 class="weight-regular customer__span">
+                            Justin from
+                          </h4></span
+                        >
+                        <span class="weight-bold"
+                          ><h4 class="customer__span">
+                            Best Views Reviews
+                          </h4></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="customer-review__details"id="customer-review__slide">
+                  <div class="customer-review__slide viewSlide">
+                    <h3 class="weight-regular">
+                      "I just love AI now. I can create the content on the go in no time with Attryb’s Content Studio. I simply add my product and business details, and I get original, contextual post suggestions in no time. It so amazing and I am never going back to traditional way of writing. Thanks, Team Attryb!"
+                    </h3>
+                    <div class="customer-review__image-content">
+                      <img
+                        class="customer-review__image"
+                        src="./image/customer_image.png"
+                        alt="customer image"
+                      />
+                      <img
+                        class="customer-review__bg-pattern"
+                        src="./image/customer_review_pattern.svg"
+                        alt="customer_rev_pattern"
+                      />
+                      <div class="customer-review__designation">
+                        <span
+                          ><h4 class="weight-regular customer__span">
+                            Justin from
+                          </h4></span
+                        >
+                        <span class="weight-bold"
+                          ><h4 class="customer__span">
+                            Best Views Reviews
+                          </h4></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="customer-review__details"id="customer-review__slide">
+                  <div class="customer-review__slide viewSlide">
+                    <h3 class="weight-regular">
+                      "Content studio is my favorite content writing tool! We were struggling to write long form content which actually ranks on google. This amazing tool gives me information on high-ranking questions, keywords, competitor intelligence metrics, and much more. I can also keep my content better organized now!"
+                    </h3>
+                    <div class="customer-review__image-content">
+                      <img
+                        class="customer-review__image"
+                        src="./image/customer_image.png"
+                        alt="customer image"
+                      />
+                      <img
+                        class="customer-review__bg-pattern"
+                        src="./image/customer_review_pattern.svg"
+                        alt="customer_rev_pattern"
+                      />
+                      <div class="customer-review__designation">
+                        <span
+                          ><h4 class="weight-regular customer__span">
+                            Justin from
+                          </h4></span
+                        >
+                        <span class="weight-bold"
+                          ><h4 class="customer__span">
+                            Best Views Reviews
+                          </h4></span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="customer-review__arrow-right">
-                <img src="./image/arrow-right.png" alt="right arrow" />
+              <div class="customer-review__arrow-right" onclick="nextSlide(1)">
+                <img id="right__arrow" src="./image/arrow-right.png" alt="right arrow" />
               </div>
             </div>
           </div>
-          <div class="customer-review__indicator"><h3>1/4</h3></div>
+          <div class="customer-review__indicator"><h3 id="customer-review__indicator">1/4</h3></div>
         </div>
       </section>
       <section class="faq-section">
+        <div class="container__width">
         <header>
           <h2>Frequently Asked Questions</h2>
         </header>
@@ -231,10 +306,11 @@
           <div class="faq-container__wrapper">
             <div class="faq-container__item">
               <div class="faq-container__item-list">
-                <img src="./image/minus.svg" alt="minus icon" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
                 <h3>What type of content does Content Studio generate?</h3>
               </div>
-              <div class="faq-container__active-para">
+              <div class="faq-container__para">
                 <h4 class="weight-regular">
                   The Content Studio generates content with 30+ templates which
                   is broadly classified in Short Form and Long Form content.
@@ -247,38 +323,99 @@
             </div>
             <div class="faq-container__item">
               <div class="faq-container__item-list">
-                <img src="./image/plus.svg" alt="" />
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
                 <h3>How does Content Studio generate short form content?</h3>
               </div>
+              <div class="faq-container__para">
+                <h4 class="weight-regular">
+                  The Content Studio generates content with 30+ templates which
+                  is broadly classified in Short Form and Long Form content.
+                  Short form content templates cover ad copies for Google,
+                  Titles & Meta description for Webpages, and Product
+                  Descriptions for Amazon products. Long form content covers
+                  1,000+ words blog posts.
+                </h4>
+              </div>
             </div>
             <div class="faq-container__item">
               <div class="faq-container__item-list">
-                <img src="./image/plus.svg" alt="" />
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
                 <h3>Who owns the content generated using Content Studio?</h3>
               </div>
-            </div>
-            <div class="faq-container__item">
-              <div class="faq-container__item-list">
-                <img src="./image/plus.svg" alt="" />
-                <h3> When is my account deactivated if I unsubscribe in between billing cycle?</h3>
+              <div class="faq-container__para">
+                <h4 class="weight-regular">
+                  The Content Studio generates content with 30+ templates which
+                  is broadly classified in Short Form and Long Form content.
+                  Short form content templates cover ad copies for Google,
+                  Titles & Meta description for Webpages, and Product
+                  Descriptions for Amazon products. Long form content covers
+                  1,000+ words blog posts.
+                </h4>
               </div>
             </div>
             <div class="faq-container__item">
               <div class="faq-container__item-list">
-                <img src="./image/plus.svg" alt="" />
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
+                <h3>
+                  When is my account deactivated if I unsubscribe in between
+                  billing cycle?
+                </h3>
+              </div>
+              <div class="faq-container__para blogbox" style="display: none;">
+                <h4 class="weight-regular">
+                  The Content Studio generates content with 30+ templates which
+                  is broadly classified in Short Form and Long Form content.
+                  Short form content templates cover ad copies for Google,
+                  Titles & Meta description for Webpages, and Product
+                  Descriptions for Amazon products. Long form content covers
+                  1,000+ words blog posts.
+                </h4>
+              </div>
+            </div>
+            <div class="faq-container__item" style="display: none;">
+              <div class="faq-container__item-list">
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
                 <h3>Is the generated content original?</h3>
               </div>
+              <div class="faq-container__para">
+                <h4 class="weight-regular">
+                  The Content Studio generates content with 30+ templates which
+                  is broadly classified in Short Form and Long Form content.
+                  Short form content templates cover ad copies for Google,
+                  Titles & Meta description for Webpages, and Product
+                  Descriptions for Amazon products. Long form content covers
+                  1,000+ words blog posts.
+                </h4>
+              </div>
             </div>
-            <div class="faq-container__item">
+            <div class="faq-container__item" style="display: none;">
               <div class="faq-container__item-list">
-                <img src="./image/plus.svg" alt="" />
+                <img class="plus_icon"  src="./image/plus.svg" alt="" />
+                <img class="minus_icon" src="./image/minus.svg" alt="minus icon" />
                 <h3>Can I collaborate with my team members?</h3>
+              </div>
+              <div class="faq-container__para">
+                <h4 class="weight-regular">
+                  The Content Studio generates content with 30+ templates which
+                  is broadly classified in Short Form and Long Form content.
+                  Short form content templates cover ad copies for Google,
+                  Titles & Meta description for Webpages, and Product
+                  Descriptions for Amazon products. Long form content covers
+                  1,000+ words blog posts.
+                </h4>
               </div>
             </div>
           </div>
-          <button class="load__more__button font-button">Load More</button>
+          <button id="showMore" class="load__more__button font-button">Load More</button>
         </div>
+      </div>
       </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
