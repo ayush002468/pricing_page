@@ -306,6 +306,7 @@ label:active:after {
     flex-direction: row;
     max-width: 90%;
     padding: 0;
+    margin-top: 0.3rem;
     margin: 0 auto;
 }
 .pricing-column{
@@ -585,7 +586,9 @@ label:active:after {
         font-size: var(--base-fontsize-mobile);
     }
     /* pricing main section mobile view css starts here */
-
+    section{
+        padding: 2.5rem 1rem;
+    }
     .pricing-header__content h1{
         margin: 0 3rem;
     }
@@ -660,12 +663,14 @@ label:active:after {
         margin-left: 1rem;
     }
     .customer-review__slide h3{
-        margin: 0rem 3rem 0rem 1rem;
+        margin: 1rem 3rem 0rem 0rem;
         text-align: left;
     }
     .customer-review__details .customer-review__slide{
         display: inline !important;
         width: calc(100vw - 2rem);
+        padding-top: 0rem !important;
+        
     }
     .customer-review__image{
         margin: 0;
@@ -684,7 +689,7 @@ label:active:after {
         align-items: center;
         position: relative;
         gap: 1rem;
-        margin-left: 1rem;
+        margin-top: 1.715rem;
         align-self: flex-start;
     }
     .customer-review__bg-pattern{
@@ -698,10 +703,6 @@ label:active:after {
         padding: 0;
         padding-bottom: 2rem;
     }
-    .faq-section{
-        padding: 1rem;
-        padding-top: 2.5rem;
-    }
     .faq-container__item-list{
         gap: 0.5rem;
     }
@@ -710,6 +711,10 @@ label:active:after {
     }
     .faq-container__para.active{
         padding-left: 2rem;
+        transition: none;
+    }
+    .faq-container__para{
+        transition: none;
     }
     .load__more__button{
         padding: 1.2rem 10rem;
