@@ -72,8 +72,10 @@ body{
 .weight-regular {
     font-weight: 400 !important;
 }
+h1, h2 , h3 , h4 {
+    margin: 0;
+}
 
-/* In our typography definition, there's no H5 and H6 */
 h1,
 .h1 {
     font-family: "Inter";
@@ -350,6 +352,10 @@ label:active:after {
 }
 .pricing-column__feature-content{
     display: flex;
+    align-items: center;
+}
+.pricing-column__feature-content img{
+    height: 1.375rem;
 }
 .pricing-column__feature-content p{
     color: var(--grayscale);
@@ -365,6 +371,10 @@ label:active:after {
 }
 .pricing-column__features-para.hidden{
     color: transparent;
+}
+.pricing-column__features-para.hidden p{
+    margin: 0;
+    margin-bottom: 0.3rem;
 }
 .pricing-column__features-para h4{
     margin-bottom: 0;
@@ -396,7 +406,7 @@ label:active:after {
 .customer-review{
     padding: 8rem 0;
 }
-.customer-review header h2{
+.customerRev__heading{
     color: var(--primary);
     margin: 0;
 }
@@ -419,6 +429,8 @@ label:active:after {
 .customer-review__slide h3{
     color: var(--grayscale);
     margin: auto 3rem;
+    text-align: left;
+
 }
 
 .customer-review__details .customer-review__slide{
@@ -426,7 +438,7 @@ label:active:after {
     align-items: center;
     margin: 0 auto;
 } 
-.customer-review__details .viewSlide{
+.customer-review__details .customer-review__slide.viewSlide{
     display: flex;
       animation: fadein 700ms;
       justify-content: space-between;
@@ -495,11 +507,16 @@ label:active:after {
 .faq-container__wrapper{
     padding: 4.5rem 0rem 4rem;
 }
+.faq-container__item{
+    margin-bottom: 1.6rem;
+}
 
 .faq-container__item-list{
     display: flex;
     gap: 1.5rem;
     color: var(--grayscale);
+    cursor: pointer;
+    margin-bottom: .6rem;
 }
 .faq-container__item-list.active{
     opacity: 1;
@@ -507,6 +524,7 @@ label:active:after {
     -webkit-transition: all 0.35s ease 0.15s;
     -o-transition: all 0.35s ease 0.15s;
     transition: all 0.35s ease 0.15s;
+    margin-bottom: .6rem;
 }
 .faq-container__item-list img{
     width: 1.432rem;
@@ -610,17 +628,29 @@ label:active:after {
     .customersRev__wrapper{
         margin:0;
     }
+    .customersRev__wrapper  h2{
+        text-align: left;
+    }
     .customer-review__indicator{
         display: none;
     }
-    .customer-review__slide-wrapper{
-        margin:0;
+    .customer-review__slide-wrapper {
+        margin: 0;
+        display: flex;
+        align-items: stretch;
+        width: calc(100vw - 2rem);
+        overflow-x: auto;
     }
-    .customer-review__slide{
+    .customer-review__details{
+        display: flex;
+        width: calc(100vw - 2rem);
+        margin-right: 1rem;
+    }
+    /* .customer-review__slide{
         flex-direction: column;
         padding-top: 1rem;
         gap: 1rem;
-    }
+    } */
     .customer-review{
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
@@ -634,7 +664,7 @@ label:active:after {
         text-align: left;
     }
     .customer-review__details .customer-review__slide{
-        display: inline;
+        display: inline !important;
         width: calc(100vw - 2rem);
     }
     .customer-review__image{
