@@ -641,12 +641,12 @@ label:active:after {
         margin: 0;
         display: flex;
         align-items: stretch;
-        width: calc(100vw - 2rem);
+        width: calc(99vw - 1.3rem);
         overflow-x: auto;
     }
     .customer-review__details{
         display: flex;
-        width: calc(100vw - 2rem);
+        width: calc(99vw - 2rem);
         margin-right: 1rem;
     }
     /* .customer-review__slide{
@@ -663,12 +663,12 @@ label:active:after {
         margin-left: 1rem;
     }
     .customer-review__slide h3{
-        margin: 1rem 3rem 0rem 0rem;
+        margin: 1rem 0rem 0rem 0rem;
         text-align: left;
     }
     .customer-review__details .customer-review__slide{
         display: inline !important;
-        width: calc(100vw - 2rem);
+        width: calc(98vw - 2rem);
         padding-top: 0rem !important;
         
     }
